@@ -1,0 +1,26 @@
+<h2>People Details</h2> 
+
+<hr/>
+<div *ngIf="people">
+  <div>
+    <label><b>Name: </b></label> {{people.name}}
+  </div>
+  <div>
+    <label><b>Email: </b></label> {{people.email}}
+  </div>
+  <div>
+    <label><b>Date of birth: </b></label> {{people.dob}}
+  </div>
+  <div>
+    <label><b>Avatar: </b></label> {{people.avatar}}
+  </div>
+  <div>
+    <label><b>country: </b></label> {{people.country}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to People List</button><br>
+
+

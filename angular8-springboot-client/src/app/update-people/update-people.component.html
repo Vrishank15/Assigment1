@@ -1,0 +1,34 @@
+<div class="alert alert-danger" *ngIf="errorMessage">
+  <strong>Something went wrong</strong>.{{errorObject}}
+</div>
+<h3>Update People</h3>
+<div [hidden]="submitted" style="width: 400px;overflow-y:auto;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="people.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Email Id</label>
+      <input type="email" class="form-control" id="emailId" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required [(ngModel)]="people.email" name="emailId">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Date of birth</label>
+      <input type="text" class="form-control" id="dob" required [(ngModel)]="people.dob" name="dob">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Image link</label>
+      <input type="text" class="form-control" id="imageLink" required [(ngModel)]="people.avatar" name="imageLink">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Country</label>
+      <input type="text" class="form-control" id="country" required [(ngModel)]="people.country" name="country">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

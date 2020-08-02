@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>People List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="text-center">Avatar</th>
+          <th class="text-center">Name</th>
+          <th class="text-center">Email</th>
+          <th class="text-center">Age</th>
+          <th class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let people of peoples | async">
+          <td class="text-center"><img src="{{people.avatar}}" alt="Avatar" class="avatar"></td>
+          <td class="text-center underline" (click)="updatePeople(people.id)">{{people.name}}</td>
+          <td class="text-center">{{people.email}}</td>
+          <td class="text-center">{{people.dob | ageCalculator}}</td>
+          <td class="text-center">
+              <button (click)="updatePeople(people.id)" class="btn btn-info" style="margin-left: 10px">Edit</button>
+              <button (click)="peopleDetails(people.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
